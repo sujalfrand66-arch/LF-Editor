@@ -1,0 +1,58 @@
+.line{
+  width:0;
+  height:1px;
+  background:#fff;
+  margin-bottom:25px;
+  animation:lineReveal 1.8s cubic-bezier(.77,0,.18,1) forwards;
+}
+
+.logo{
+  font-size:4rem;
+  letter-spacing:10px;
+  opacity:0;
+  animation:logoReveal 2.2s cubic-bezier(.77,0,.18,1) forwards;
+  animation-delay:1.2s;
+}
+
+.tagline{
+  font-size:0.9rem;
+  letter-spacing:4px;
+  margin-top:12px;
+  opacity:0;
+  animation:fadeUp 1.5s ease forwards;
+  animation-delay:2.6s;
+}
+
+.hero .btn{
+  opacity:0;
+  animation:fadeUp 1.5s ease forwards;
+  animation-delay:3.2s;
+}
+
+@keyframes lineReveal{
+  to{width:260px}
+}
+
+@keyframes logoReveal{
+  from{
+    opacity:0;
+    transform:translateY(40px);
+    filter:blur(8px);
+  }
+  to{
+    opacity:1;
+    transform:translateY(0);
+    filter:blur(0);
+  }
+}
+
+@keyframes fadeUp{
+  from{
+    opacity:0;
+    transform:translateY(20px);
+  }
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+}

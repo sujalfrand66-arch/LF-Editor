@@ -1,0 +1,272 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;600&display=swap');
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Montserrat',sans-serif;
+}
+
+body{
+  background:#000;
+  color:#fff;
+}
+
+/* NAV */
+.nav{
+  position:fixed;
+  top:0;
+  width:100%;
+  padding:20px 60px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  background:rgba(0,0,0,0.6);
+  backdrop-filter:blur(10px);
+  z-index:100;
+}
+
+.nav ul{
+  list-style:none;
+  display:flex;
+  gap:30px;
+}
+
+.nav a{
+  color:#fff;
+  text-decoration:none;
+  opacity:0.7;
+  font-size:0.85rem;
+  letter-spacing:2px;
+}
+.nav a:hover{opacity:1}
+
+/* HERO */
+.hero{
+  height:100vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+}
+
+/* SECTIONS */
+.section{
+  padding:140px 20px;
+  text-align:center;
+}
+
+/* SERVICES */
+.service-grid{
+  max-width:1100px;
+  margin:60px auto 0;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:30px;
+}
+
+.service-box{
+  border:1px solid rgba(255,255,255,0.15);
+  padding:30px;
+}
+
+.service-box p{
+  opacity:0.7;
+  font-size:0.9rem;
+  margin-top:10px;
+}
+
+/* BUTTON */
+.btn{
+  display:inline-block;
+  margin-top:40px;
+  padding:14px 45px;
+  border:1px solid #fff;
+  color:#fff;
+  text-decoration:none;
+  letter-spacing:3px;
+  transition:0.4s;
+}
+.btn:hover{
+  background:#fff;
+  color:#000;
+}
+/* ✨ SHINE EFFECT BASE */
+.service-box{
+  position: relative;
+  overflow: hidden;
+}
+
+/* ✨ SHINE LAYER */
+.service-box::before{
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -120%;
+  width: 120%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    transparent 30%,
+    rgba(255,255,255,0.25),
+    transparent 70%
+  );
+  transition: none;
+}
+
+/* ✨ HOVER PE SHINE CHALEGA */
+.service-box:hover::before{
+  animation: shine 1.2s ease;
+}
+
+/* ✨ KEYFRAMES */
+@keyframes shine{
+  from{
+    left: -120%;
+  }
+  to{
+    left: 120%;
+  }
+}
+/* ✨ AUTO SHINE – ONE BY ONE */
+.service-box::before{
+  animation: autoShine 6s linear infinite;
+}
+
+/* 🔥 DELAY SET (HAR BOX ALAG TIME PE) */
+.service-box:nth-child(1)::before{ animation-delay: 0s; }
+.service-box:nth-child(2)::before{ animation-delay: 1.5s; }
+.service-box:nth-child(3)::before{ animation-delay: 3s; }
+.service-box:nth-child(4)::before{ animation-delay: 4.5s; }
+.service-box:nth-child(5)::before{ animation-delay: 6s; }
+
+@keyframes autoShine{
+  0%   { left: -120%; }
+  20%  { left: 120%; }
+  100% { left: 120%; }
+}
+/* 🔴 SERVICE BOX HOVER RED EFFECT */
+.service-box{
+  transition: background 0.4s ease, border 0.4s ease, transform 0.4s ease;
+  border: 1px solid rgba(255,255,255,0.15);
+}
+
+/* 🔥 Hover pe box red feel */
+.service-box:hover{
+  background: rgba(255,0,0,0.08);
+  border-color: #ff2a2a;
+  transform: translateY(-8px);
+}
+
+/* 🔴 SERVICE BUTTON */
+.service-btn{
+  display:inline-block;
+  margin-top:20px;
+  padding:10px 30px;
+  border:1px solid #ff2a2a;
+  color:#ff2a2a;
+  text-decoration:none;
+  font-size:0.8rem;
+  letter-spacing:2px;
+  transition:0.4s ease;
+}
+
+/* 🔥 Hover pe button glow */
+.service-box:hover .service-btn{
+  background:#f0ecec;
+  color:#000;
+  box-shadow: 0 0 15px rgba(225, 47, 11, 0.8);
+}
+/* ===== ABOUT SECTION ===== */
+.about{
+  max-width:1100px;
+  margin:auto;
+}
+
+.about-text{
+  max-width:800px;
+  margin:30px auto 60px;
+  font-size:0.95rem;
+  line-height:1.8;
+  opacity:0.75;
+}
+
+.about-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:30px;
+}
+
+.about-box{
+  border:1px solid rgba(255,255,255,0.15);
+  padding:30px;
+}
+
+.about-box h3{
+  margin-bottom:12px;
+  letter-spacing:1px;
+}
+/* 🔥 ABOUT BOX HOVER GLOW */
+.about-box{
+  transition: all 0.4s ease;
+}
+
+/* Hover effect */
+.about-box:hover{
+  border-color:#ff2a2a;
+  box-shadow: 0 0 20px rgba(255,42,42,0.6);
+  transform: translateY(-8px);
+}
+
+/* ===== GALLERY SECTION ===== */
+
+.gallery{
+  max-width:1100px;
+  margin:auto;
+}
+
+.gallery-grid{
+  margin-top:60px;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:30px;
+}
+
+/* FIX IMAGE SIZE */
+.gallery-item{
+  position:relative;
+  height:220px;
+  overflow:hidden;
+  border:1px solid rgba(255,255,255,0.15);
+}
+
+.gallery-item img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+  transition:0.5s ease;
+}
+
+/* HOVER EFFECT */
+.gallery-item:hover img{
+  transform:scale(1.1);
+}
+
+.gallery-overlay{
+  position:absolute;
+  inset:0;
+  background:rgba(0,0,0,0.6);
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  opacity:0;
+  transition:0.4s ease;
+  font-size:0.85rem;
+  letter-spacing:2px;
+}
+
+.gallery-item:hover .gallery-overlay{
+  opacity:1;
+}
